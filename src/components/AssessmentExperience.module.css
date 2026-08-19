@@ -1,0 +1,272 @@
+.page {
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(255, 109, 44, 0.2), transparent 29rem),
+    #090909;
+  color: #eef3fb;
+}
+
+.nav,
+.shell {
+  width: min(74rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 0;
+}
+
+.back {
+  color: rgba(238, 243, 251, 0.68);
+  font-size: 0.88rem;
+}
+
+.back:hover,
+.back:focus-visible {
+  color: #ff9a66;
+}
+
+.shell {
+  display: grid;
+  gap: 3rem;
+  padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(5rem, 12vw, 9rem);
+}
+
+.intro {
+  max-width: 34rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #ff9a66;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.intro h1,
+.complete h2 {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.intro > p:not(.eyebrow) {
+  margin: 1.35rem 0 0;
+  color: rgba(238, 243, 251, 0.73);
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.summary {
+  margin: 2.5rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.summary dt {
+  color: rgba(238, 243, 251, 0.54);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.summary dd {
+  margin: 0.45rem 0 0;
+  color: #ff9a66;
+  font-size: 1.05rem;
+}
+
+.workspace {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.4rem;
+  background: #121212;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+  list-style: none;
+}
+
+.steps li {
+  display: grid;
+  gap: 0.3rem;
+  color: rgba(238, 243, 251, 0.38);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+}
+
+.steps span {
+  color: inherit;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.steps .stepActive {
+  color: #ff9a66;
+}
+
+.workspace form,
+.complete {
+  padding: clamp(1.4rem, 4vw, 2.5rem);
+}
+
+.formStep {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.formStep fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.formStep legend,
+.formStep label {
+  display: grid;
+  gap: 0.6rem;
+  color: rgba(238, 243, 251, 0.76);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.choiceGrid {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.choice,
+.choiceActive {
+  min-height: 3.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.35rem;
+  padding: 0.7rem 0.85rem;
+  background: rgba(255, 255, 255, 0.02);
+  color: #eef3fb;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.choice:hover,
+.choice:focus-visible,
+.choiceActive {
+  border-color: #ff6d2c;
+  background: rgba(255, 109, 44, 0.14);
+  outline: none;
+}
+
+.formStep input,
+.formStep select,
+.formStep textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 0.3rem;
+  padding: 0.85rem;
+  background: #0a0a0a;
+  color: #eef3fb;
+  font: inherit;
+  line-height: 1.35;
+}
+
+.formStep textarea {
+  resize: vertical;
+}
+
+.formStep input:focus,
+.formStep select:focus,
+.formStep textarea:focus {
+  border-color: #ff6d2c;
+  outline: 2px solid rgba(255, 109, 44, 0.25);
+  outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.secondary {
+  border: 0;
+  padding: 0.7rem 0.5rem;
+  background: transparent;
+  color: rgba(238, 243, 251, 0.72);
+  font: inherit;
+  cursor: pointer;
+}
+
+.secondary:hover,
+.secondary:focus-visible {
+  color: #ff9a66;
+  outline: none;
+}
+
+.complete h2 {
+  font-size: clamp(2.5rem, 5vw, 4.3rem);
+}
+
+.complete > p:not(.eyebrow) {
+  max-width: 32rem;
+  margin: 1.25rem 0 0;
+  color: rgba(238, 243, 251, 0.72);
+  line-height: 1.6;
+}
+
+.error {
+  margin: 1rem 0 0;
+  color: #ff9a66;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.alternate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  padding: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+  color: rgba(238, 243, 251, 0.52);
+  font-size: 0.78rem;
+}
+
+.alternate a {
+  color: rgba(238, 243, 251, 0.8);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.alternate a:hover,
+.alternate a:focus-visible {
+  color: #ff9a66;
+}
+
+@media (min-width: 850px) {
+  .shell {
+    grid-template-columns: minmax(0, 0.8fr) minmax(31rem, 1.2fr);
+    align-items: start;
+  }
+
+  .choiceGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

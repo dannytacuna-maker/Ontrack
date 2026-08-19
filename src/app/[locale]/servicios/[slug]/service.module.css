@@ -1,0 +1,327 @@
+.page {
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 86% 5%, rgba(255, 109, 44, 0.19), transparent 34rem),
+    radial-gradient(circle at 10% 60%, rgba(255, 255, 255, 0.035), transparent 28rem),
+    #070707;
+  color: #eef3fb;
+  overflow-x: clip;
+}
+
+.nav {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(76rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 1.4rem 0;
+}
+
+.hero,
+.detail,
+.related,
+.serviceContext {
+  width: min(76rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: min(45rem, calc(100svh - 4rem));
+  padding: clamp(4rem, 10vw, 7.5rem) 0 clamp(5.5rem, 10vw, 7.5rem);
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 1;
+  max-width: min(46rem, 68%);
+}
+
+/* Full-bleed still that dissolves into the page rather than sitting on it. */
+.heroMedia {
+  position: absolute;
+  z-index: 0;
+  top: -5.5rem;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.heroPhoto {
+  object-fit: cover !important;
+  object-position: center 45% !important;
+  opacity: 0.55;
+  filter: saturate(0.82) contrast(1.04);
+}
+
+.heroMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 7, 7, 0.9) 0%,
+      rgba(7, 7, 7, 0.7) 32%,
+      rgba(7, 7, 7, 0.3) 62%,
+      rgba(7, 7, 7, 0.38) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 7, 7, 0.62) 0%,
+      rgba(7, 7, 7, 0.14) 26%,
+      rgba(7, 7, 7, 0.5) 76%,
+      #070707 100%
+    );
+}
+
+.scrollHint {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: clamp(1.2rem, 4vh, 2.4rem);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  transform: translateX(-50%);
+  color: rgba(238, 243, 251, 0.72);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.scrollHint:hover,
+.scrollHint:focus-visible {
+  color: #ff9a66;
+  outline: none;
+}
+
+.scrollIcon {
+  display: grid;
+  place-items: center;
+  width: 1.55rem;
+  height: 2.55rem;
+  color: #ff9a66;
+}
+
+.scrollIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.scrollDot {
+  animation: scrollCue 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollCue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(10px);
+    opacity: 0.25;
+  }
+}
+
+.eyebrow {
+  margin: 0;
+  color: #ff9a66;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.detail h2 {
+  margin: 0.65rem 0 0;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 {
+  max-width: 55rem;
+  font-size: clamp(3.2rem, 8.5vw, 7rem);
+  line-height: 1.02;
+}
+
+.lead {
+  max-width: 42rem;
+  margin: 1.75rem 0 0;
+  color: rgba(238, 243, 251, 0.75);
+  font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+
+.detail {
+  display: grid;
+  gap: 2rem;
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.detail h2 {
+  max-width: 22rem;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: 0.98;
+}
+
+.detail ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail li {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(238, 243, 251, 0.8);
+  font-size: 1rem;
+}
+
+.detail li::before {
+  content: "↗";
+  margin-right: 0.8rem;
+  color: #ff6d2c;
+}
+
+.serviceContext {
+  display: grid;
+  gap: 1px;
+  margin-top: 0.35rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.serviceContext article {
+  min-height: 12rem;
+  padding: clamp(1.3rem, 3vw, 2rem);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 109, 44, 0.1), transparent 12rem),
+    #101010;
+}
+
+.serviceContext p {
+  margin: 0;
+  color: #ff9a66;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.serviceContext strong {
+  display: block;
+  max-width: 26rem;
+  margin-top: 1.15rem;
+  color: rgba(238, 243, 251, 0.9);
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.38;
+  letter-spacing: -0.02em;
+}
+
+.related {
+  padding: 0 0 clamp(5rem, 12vw, 9rem);
+}
+
+.relatedGrid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.relatedGrid a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
+  color: #eef3fb;
+}
+
+.relatedGrid a:hover,
+.relatedGrid a:focus-visible {
+  border-color: #ff6d2c;
+  background: rgba(255, 109, 44, 0.12);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollDot {
+    animation: none;
+  }
+}
+
+@media (min-width: 800px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .detail {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  .serviceContext {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 799px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .heroCopy {
+    max-width: 100%;
+  }
+
+  .heroPhoto {
+    opacity: 0.4;
+    object-position: center 38% !important;
+  }
+
+  .scrollHint {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin: 2rem auto 0;
+  }
+
+  .detail ul {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,122 @@
+.root {
+  position: relative;
+  z-index: 5;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.42);
+  color: rgba(238, 243, 251, 0.88);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background 180ms ease;
+}
+
+.trigger:hover,
+.trigger:focus-visible,
+.trigger[aria-expanded="true"] {
+  border-color: rgba(255, 154, 102, 0.72);
+  color: #fff;
+  background: rgba(18, 12, 8, 0.72);
+  outline: none;
+}
+
+.chevron {
+  color: #ff9a66;
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  right: 0;
+  width: min(18.5rem, calc(100vw - 2.5rem));
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 109, 44, 0.18), transparent 10rem),
+    rgba(12, 12, 12, 0.96);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+}
+
+.groupLabel {
+  margin: 0 0 0.45rem 0.35rem;
+  color: #ff9a66;
+  font-size: 0.66rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.list {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item,
+.itemActive,
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 0.75rem;
+  border-radius: 0.7rem;
+  color: rgba(238, 243, 251, 0.86);
+  font-size: 0.9rem;
+  font-weight: 550;
+  line-height: 1.25;
+  text-decoration: none;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.item:hover,
+.item:focus-visible,
+.home:hover,
+.home:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  outline: none;
+}
+
+.itemActive {
+  background: rgba(255, 109, 44, 0.16);
+  color: #fff;
+}
+
+.itemActive span:last-child {
+  color: #ff9a66;
+  font-size: 0.55rem;
+}
+
+.divider {
+  height: 1px;
+  margin: 0.45rem 0.35rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.home {
+  color: rgba(238, 243, 251, 0.72);
+  font-size: 0.84rem;
+}
